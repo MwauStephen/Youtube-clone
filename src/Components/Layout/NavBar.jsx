@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Stack } from "@mui/material";
 import { logo } from "../../Utilities/Constants";
+import SearchBar from "./SearchBar";
 
 const NavBar = () => {
   return (
@@ -19,6 +20,7 @@ const NavBar = () => {
       <Link to="/">
         <img src={logo} alt="logo" height={45} />
       </Link>
+      <SearchBar />
     </Stack>
   );
 };
