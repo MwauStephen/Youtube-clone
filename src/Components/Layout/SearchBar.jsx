@@ -18,7 +18,11 @@ const SearchBar = () => {
         mr: { sm: 5 },
       }}
     >
-      <input onChange={onChangeHandler} className="search-bar" />
+      <input
+        onChange={onChangeHandler}
+        className="search-bar"
+        placeholder="search...."
+      />
       <IconButton type="submit" sx={{ color: "red", p: "10px" }}>
         <Search />
       </IconButton>
