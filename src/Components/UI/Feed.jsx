@@ -21,6 +21,23 @@ const Feed = () => {
           Copyright Stephen Mwau
         </Typography>
       </Box>
+      <Box
+        sx={{
+          flex: 2,
+          height: "90vh",
+          overflowY: "auto",
+        }}
+        p={2}
+      >
+        <Typography
+          variant="h4"
+          fontWeight="bold"
+          sx={{ color: "white" }}
+          mb={2}
+        >
+          New <span style={{ color: "#fc1503" }}>Vidoes</span>
+        </Typography>
+      </Box>
     </Stack>
   );
 };
