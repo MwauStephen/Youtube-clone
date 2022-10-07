@@ -6,6 +6,12 @@ import Videos from "../Videos/Videos";
 import fetchFromApi from "../../Utilities/fetchFromApi";
 
 const Feed = () => {
+  const [selectedCategory, setSelectedCategory] = useState("New");
+
+  useEffect(() => {
+    fetchFromApi(`search?=part=snippet&q=${selectedCategory}`);
+  }, [selectedCategory]);
+
   return (
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
       <Box
@@ -15,7 +21,10 @@ const Feed = () => {
           px: { sx: 0, md: 2 },
         }}
       >
-        <SideBar />
+        <SideBar
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+        />
         <Typography
           className="copyright"
           variant="body2"
@@ -24,6 +33,8 @@ const Feed = () => {
           Copyright Stephen Mwau
         </Typography>
       </Box>
+
+      {/*vidoes feed  */}
       <Box
         sx={{
           flex: 2,
@@ -38,7 +49,8 @@ const Feed = () => {
           sx={{ color: "white" }}
           mb={2}
         >
-          New <span style={{ color: "#fc1503" }}>Vidoes</span>
+          {selectedCategory}&nbsp;
+          <span style={{ color: "#fc1503" }}>Vidoes</span>
         </Typography>
         <Videos videos={[]} />
       </Box>
