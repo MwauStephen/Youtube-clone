@@ -2,8 +2,7 @@ import React from "react";
 import { categories } from "../../Utilities/Constants";
 import { Stack } from "@mui/material";
 
-const SideBar = () => {
-  const selectedCategory = "New";
+const SideBar = ({ selectedCategory, setSelectedCategory }) => {
   return (
     <Stack
       direction="row"
@@ -14,8 +13,14 @@ const SideBar = () => {
       }}
     >
       {categories.map((category) => {
+        // tabs title change handler
+        const onChangeTabsHandler = () => {
+          setSelectedCategory(category.name);
+        };
+
         return (
           <button
+            onClick={onChangeTabsHandler}
             className="category-btn"
             style={{
               background: category.name === selectedCategory && "#fc1503",
