@@ -3,6 +3,7 @@ import { Stack, Box, Typography } from "@mui/material";
 
 import SideBar from "../Layout/SideBar";
 import Videos from "../Videos/Videos";
+import fetchFromApi from "../../Utilities/fetchFromApi";
 
 const Feed = () => {
   return (
