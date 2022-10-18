@@ -51,7 +51,7 @@ const Feed = () => {
           mb={2}
         >
           {selectedCategory}&nbsp;
-          <span style={{ color: "#fc1503" }}>Vidoes</span>
+          <span style={{ color: "#fc1503" }}>Videos</span>
         </Typography>
         <Videos videos={videos} />
       </Box>
