@@ -14,12 +14,6 @@ const options = {
 
 
 
-
-
-
-
-
-
 const fetchFromApi = async (url) => {
   const response = await axios.get(`${BASE_URL}/${url}`, options);
   console.log(response);
