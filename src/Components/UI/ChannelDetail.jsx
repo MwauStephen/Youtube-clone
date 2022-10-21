@@ -10,6 +10,14 @@ const ChannelDetail = (props) => {
   const [channelDetail, setChannelDetail] = useState(null);
   const { id } = useParams();
 
+  console.log(channelDetail);
+
+  useEffect(() => {
+    fetchFromApi(`channels?part=snippet&id=${id}`).then((data) => {
+      setChannelDetail(data.items[0]);
+    });
+  }, [id]);
+
   return <div>{id}</div>;
 };
 
