@@ -16,10 +16,10 @@ const options = {
 
 const fetchFromApi = async (url) => {
   const response = await axios.get(`${BASE_URL}/${url}`, options);
-  console.log(response);
+  // console.log(response);
 
   const { data} = response;
-  console.log(data);
+  // console.log(data);
 
   return data;
 };
