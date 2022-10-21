@@ -4,7 +4,7 @@ import ChannelCard from "./ChannelCard";
 import {Stack,Box} from "@mui/material"
 
 const Videos = (props) => {
-   console.log(props.videos);
+//    console.log(props.videos);
     return <Stack direction="row" flexWrap="wrap" gap={2} justifyContent="spaceBetween">
         {props.videos.map((item,id)=>{
           return <Box key={id}>
