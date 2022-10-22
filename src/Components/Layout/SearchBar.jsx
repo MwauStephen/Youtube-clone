@@ -4,8 +4,13 @@ import { Paper, IconButton } from "@mui/material";
 import { Search } from "@mui/icons-material";
 
 const SearchBar = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+
   const onSubmitHandler = () => {};
-  const onChangeHandler = () => {};
+  const onChangeHandler = (event) => {
+    console.log(event.target.value);
+    setSearchTerm(event.target.value);
+  };
   return (
     <Paper
       component="form"
