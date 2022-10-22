@@ -2,17 +2,14 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Box } from "@mui/material";
 import { useParams } from "react-router-dom";
-import { Videos } from "../Videos/Videos";
-import { channelCard } from "../Videos/ChannelCard";
+import Videos from "../Videos/Videos";
+import ChannelCard from "../Videos/ChannelCard";
 import fetchFromApi from "../../Utilities/fetchFromApi";
 
 const ChannelDetail = (props) => {
   const [channelDetail, setChannelDetail] = useState(null);
   const [videos, setVideos] = useState([]);
   const { id } = useParams();
-
-  console.log(channelDetail);
-  console.log(videos);
 
   useEffect(() => {
     fetchFromApi(`channels?part=snippet&id=${id}`).then((data) => {
@@ -25,7 +22,21 @@ const ChannelDetail = (props) => {
     );
   }, [id, videos]);
 
-  return <div>{id}</div>;
+  return (
+    <Box minHeight="95vh">
+      <Box>
+        <div
+          style={{
+            background:
+              "linear-gradient(90deg,rgba(0,238,247,1) 0%,rgba(206,3,184,1) 100%,rgba(0,212,255,1) 100%",
+            height: "300px",
+            zIndex: "10",
+          }}
+        />
+        <ChannelCard channelDetail={channelDetail} />
+      </Box>
+    </Box>
+  );
 };
 
 export default ChannelDetail;
