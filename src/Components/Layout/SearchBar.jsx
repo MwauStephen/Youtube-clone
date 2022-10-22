@@ -6,9 +6,19 @@ import { Search } from "@mui/icons-material";
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const onSubmitHandler = () => {};
+  const navigate = useNavigate();
+
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+
+    if (searchTerm) {
+      navigate(`/search/${searchTerm}`);
+    }
+
+    // reset the input field after a search
+    setSearchTerm("");
+  };
   const onChangeHandler = (event) => {
-    console.log(event.target.value);
     setSearchTerm(event.target.value);
   };
   return (
@@ -27,6 +37,7 @@ const SearchBar = () => {
         onChange={onChangeHandler}
         className="search-bar"
         placeholder="search...."
+        value={searchTerm}
       />
       <IconButton type="submit" sx={{ color: "red", p: "10px" }}>
         <Search />
