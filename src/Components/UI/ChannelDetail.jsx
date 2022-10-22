@@ -35,6 +35,10 @@ const ChannelDetail = (props) => {
         />
         <ChannelCard channelDetail={channelDetail} marginTop="-110px" />
       </Box>
+      <Box display="flex" p="2" justifyContent="center">
+        <Box sx={{ mr: { sm: "100px" } }} />
+        <Videos videos={videos} />
+      </Box>
     </Box>
   );
 };
