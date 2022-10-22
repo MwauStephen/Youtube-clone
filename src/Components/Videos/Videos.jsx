@@ -5,9 +5,11 @@ import { Stack, Box } from "@mui/material";
 
 const Videos = (props) => {
   // console.log(props.videos);
+
+  if (!props.videos?.length) return "Loading....";
   return (
     <Stack
-      direction="row"
+      direction={props.direction || "row"}
       flexWrap="wrap"
       gap={2}
       justifyContent="spaceBetween"
