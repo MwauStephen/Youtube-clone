@@ -12,8 +12,8 @@ import { Link } from "react-router-dom";
 import ChannelDetail from "../UI/ChannelDetail";
 
 const ChannelCard = ({ channelDetail, marginTop }) => {
-  console.log(channelDetail);
-  console.log(channelDetail?.id?.channelId);
+  // console.log(channelDetail);
+  // console.log(channelDetail?.id?.channelId);
 
   return (
     <Box
