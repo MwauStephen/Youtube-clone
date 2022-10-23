@@ -1,11 +1,14 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { ReactPlayer } from "react-player";
+import ReactPlayer from "react-player";
 import { Box, Stack, Typography } from "@mui/material";
 import { CheckCircle } from "@mui/icons-material";
-import { Videos } from "../Videos/Videos";
-import { fetchFromApi } from "../../Utilities/fetchFromApi";
+import Videos from "../Videos/Videos";
+import fetchFromApi from "../../Utilities/fetchFromApi";
+// import { fetchFromApi } from "../../Utilities/fetchFromApi";
+// import { ReactPlayer } from "react-player";
+// import { Videos } from "../Videos/Videos";
 
 const VideoDetail = () => {
   const [videoDetail, setVideoDetail] = useState(null);
